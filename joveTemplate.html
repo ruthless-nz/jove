@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Chat and Form Example</title>
+    <style>
+        #chatBox {
+            width: 100%;
+            height: 200px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        var socket; // Declare socket variable in global scope
+
+        window.onload = function () {
+            // Establish WebSocket connection
+            socket = new WebSocket('ws://127.0.0.1:8081');
+
+            // Chat box element
+            var chatBox = document.getElementById("chatBox");
+
+            // Event when WebSocket is opened
+            socket.onopen = function (event) {
+                console.log("WebSocket connection established.");
+
+                // Display chat message in the chat box
+                chatBox.innerHTML += "<div><strong>Jove:</strong> " + "&" + "</div>";
+                chatBox.scrollTop = chatBox.scrollHeight;
+
+                
+            };
+
+            // Event when receiving a message from the server
+            socket.onmessage = function (event) {
+                // Parse the received data (assuming JSON format)
+                var data = JSON.parse(event.data);
+                console.log("Received message:", data);
+
+                // Display chat message in the chat box
+                chatBox.innerHTML += "<div><strong>Jove:</strong> " + data.response + "</div>";
+                chatBox.scrollTop = chatBox.scrollHeight;
+
+                // Update form fields with the received data
+                document.getElementById("entree").value = data.form.entree;
+                document.getElementById("main").value = data.form.main;
+                document.getElementById("dessert").value = data.form.dessert;
+            };
+
+            // Event when WebSocket is closed
+            socket.onclose = function (event) {
+                console.log("WebSocket connection closed.");
+            };
+        };
+
+        // Function to send chat message and form data
+        function sendMessageAndData() {
+            var message = document.getElementById("message").value;
+            var entreeValue = document.getElementById("entree").value;
+            var mainValue = document.getElementById("main").value;
+            var dessertValue = document.getElementById("dessert").value;
+
+            // Construct message
+            var data = {
+                message: message,
+                form: {
+                    entree: entreeValue,
+                    main: mainValue,
+                    dessert: dessertValue
+                },
+                submit: false
+            };
+
+            // Send message to the server
+            socket.send(JSON.stringify(data));
+
+            // Display chat message in the chat box
+            chatBox.innerHTML += "<div><strong>User:</strong> " + message + "</div>";
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            // Clear chat message input
+            document.getElementById("message").value = "";
+        }
+    </script>
+</head>
+<body>
+    <div id="chatBox"></div>
+    <!-- <input type="text" id="message" placeholder="Type your message..."> -->
+
+    <textarea id="message" name="message" rows="4" cols="50"> ... </textarea>
+    <br>
+    <br>
+    <button onclick="sendMessageAndData()">Send</button>
+    <br>
+    <br>
+    <form id="myForm" onsubmit="sendMessageAndData(); return false;">
+        <label for="entree">Entree:</label>
+        <input type="text" id="entree" name="entree"><br><br>
+        
+        <label for="main">Main:</label>
+        <input type="text" id="main" name="main"><br><br>
+        
+        <label for="dessert">Dessert:</label>
+        <input type="text" id="dessert" name="dessert"><br><br>
+        
+        <!-- <button type="submit">Update Form</button> -->
+    </form>
+</body>
+</html>

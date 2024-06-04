@@ -1,0 +1,75 @@
+<mxfile host="app.diagrams.net" modified="2024-06-04T10:05:53.763Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="CHN_xCgt3vCLzFanpo7s" version="24.4.13" type="github">
+  <diagram name="Page-1" id="CowhY7crBapN2GQQV7TC">
+    <mxGraphModel dx="1221" dy="652" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="seznvenW7n-KOsynp2f8-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="seznvenW7n-KOsynp2f8-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="205" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seznvenW7n-KOsynp2f8-1" value="Azure Blob Storage" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="45" y="100" width="120" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="seznvenW7n-KOsynp2f8-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="seznvenW7n-KOsynp2f8-3" target="seznvenW7n-KOsynp2f8-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="405" y="245" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seznvenW7n-KOsynp2f8-3" value="Python job that takes&amp;nbsp; latest extracts and drops it into a SQL table.&lt;div&gt;Ideally appends new records. &lt;i&gt;Could do this in ML workspace?&lt;/i&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="205" y="200" width="190" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="seznvenW7n-KOsynp2f8-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="seznvenW7n-KOsynp2f8-5" target="seznvenW7n-KOsynp2f8-14" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="585" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seznvenW7n-KOsynp2f8-5" value="Combine all the extracts into a giga table. Extra logic here done in SQL and DBT" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="490" y="200" width="190" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="seznvenW7n-KOsynp2f8-6" value="Either use existing code and do transformations at ingestion, or ingest as raw as possible." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" parent="1" vertex="1">
+          <mxGeometry x="205" y="100" width="190" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="seznvenW7n-KOsynp2f8-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="seznvenW7n-KOsynp2f8-10" target="seznvenW7n-KOsynp2f8-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="seznvenW7n-KOsynp2f8-10" value="Any other sources would be dealt with the same way" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="205" y="340" width="190" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="seznvenW7n-KOsynp2f8-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="seznvenW7n-KOsynp2f8-14" target="seznvenW7n-KOsynp2f8-17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="seznvenW7n-KOsynp2f8-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="seznvenW7n-KOsynp2f8-14" target="seznvenW7n-KOsynp2f8-20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="seznvenW7n-KOsynp2f8-14" value="Present tables to be used for sentiment and other bits and bobs" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="515" y="370" width="140" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="seznvenW7n-KOsynp2f8-17" value="Brain can pull&amp;nbsp;&lt;div&gt;data from here&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="775" y="445" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="seznvenW7n-KOsynp2f8-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="seznvenW7n-KOsynp2f8-20" target="seznvenW7n-KOsynp2f8-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="seznvenW7n-KOsynp2f8-23" value="Results written&amp;nbsp;&lt;div&gt;back to SQL database&amp;nbsp;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="seznvenW7n-KOsynp2f8-22" vertex="1" connectable="0">
+          <mxGeometry x="-0.1852" y="4" relative="1" as="geometry">
+            <mxPoint x="40" y="24" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seznvenW7n-KOsynp2f8-20" value="Sentiment analysis occurs" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+          <mxGeometry x="385" y="505" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="seznvenW7n-KOsynp2f8-24" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Thoughts and musings&lt;/h1&gt;&lt;div&gt;&lt;b&gt;What flavor of SQL to use?&lt;/b&gt; Thinking a default azure postgres or maybe spin up a duck db session to see if we can get some speed and simplicity. Unsure how duck DB would work with incremental and DBT. Also if reporting is needed then maybe a persistent db is needed or a csv can be persisted. DuckDB is speedy and designed for analytics workloads. Its also embedded so we can simply run it anywhere we could run python.&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Orchestration&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Airflow has been mentioned. I&#39;m wondering if it is needed. It feels like overkill for a single&amp;nbsp; process when I really want to use DBT for the SQL. I&#39;m also wondering if we could use containers or ADO agents, as we will need to need them for CI/CD anyway. These can be used as simple orchestration tools&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;CI/CD&lt;/b&gt;&lt;/div&gt;&lt;div&gt;In order to do this we need both CI/CD and probably a non prod/testing area. This can be done in postgres via databases, or could be done very well via duckdb.&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Run types&lt;/b&gt;&lt;/div&gt;&lt;div&gt;The process would need be able to be run several ways:&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;div&gt;Manual: user presses a button and things run.&amp;nbsp;&lt;/div&gt;&lt;div&gt;Schedule: Done on a schedule.&amp;nbsp;&lt;/div&gt;&lt;div&gt;Validation: Done when there is a Pull request to main to validate that things work.&amp;nbsp;&lt;/div&gt;&lt;/blockquote&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Manual runs can either be incremental or complete runs. Validation and&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Schedule are incremental&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;RunTime&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;container or VM??&lt;br&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/scale-set-agents?view=azure-devops&lt;/div&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="45" y="460" width="320" height="630" as="geometry" />
+        </mxCell>
+        <mxCell id="seznvenW7n-KOsynp2f8-30" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Proposed approach&lt;/h1&gt;&lt;p&gt;In order to make it ASAP (as simple as possible) I think the first approach is to use python DBT and duck DB to develop and tidy the data ingestion process locally. This will probs take 1-3 days.&lt;br&gt;&lt;br&gt;Once this has been assessed, then we can see if airflow or postgres is needed, consider where it would be best suitably run, and what type of resources would be needed. Options include a VM or a container (scale set agent). We would also need to tidy up and link in the sentiment job.&amp;nbsp;&lt;/p&gt;&lt;p&gt;Finally we need to figure out how to pass the data to Brian in a manner that suits him. This could be via blobstore download, or a DB. This depends on Brian&#39;s preferences and part 2.&lt;/p&gt;&lt;p&gt;&amp;nbsp;If there is a possibility for more Brians we can look at serving the data in other ways.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;This method is preferable as if it goes well, we only need 2 runtimes, one for python/DBT and the other for the sentiment GPU job and can save everything in Blob storage. It also allows much to be run locally, which is good for development.&lt;/p&gt;&lt;p&gt;If we used, it would also be straightforward to add some basic CI/CD for which would help future changes by linking it to an ADO agent pool. This means we could trigger jobs and changes from ADO pipelines and release changes fast. ADO also has sufficient alerting properties for failed jobs.&amp;nbsp;&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="440" y="600" width="360" height="460" as="geometry" />
+        </mxCell>
+        <mxCell id="KWbF8GGuKnJzkfmXWSJb-3" value="&lt;b&gt;&lt;font style=&quot;font-size: 22px;&quot;&gt;Crowd Reader 3&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="45" y="23" width="190" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
